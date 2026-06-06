@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "weekly-growth-intelligence-report"
+version = "0.1.0"
+description = "Growth AI Intelligence: automacao semanal para coletar dados de growth, gerar relatorios com IA e publicar em dashboard Streamlit."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "apscheduler>=3.10.4",
+  "beautifulsoup4>=4.12.3",
+  "google-genai>=1.0.0",
+  "openpyxl>=3.1.5",
+  "openai>=1.93.0",
+  "pandas>=2.2.2",
+  "pydantic>=2.8.2",
+  "pydantic-settings>=2.4.0",
+  "pypdf>=4.3.1",
+  "python-dotenv>=1.0.1",
+  "requests>=2.32.3",
+  "rich>=13.7.1",
+  "streamlit>=1.37.0,<1.50.0",
+  "typer>=0.12.3"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3.2",
+  "ruff>=0.5.6"
+]
+
+[project.scripts]
+growth-report = "growth_report.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

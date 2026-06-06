@@ -1,0 +1,16 @@
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+*.egg-info/
+tmp_pytest*/
+pytest-cache-files-*/
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/sample_*.csv
+!data/raw/sample_*.xlsx
+data/reports/*
+!data/reports/.gitkeep
+!data/reports/weekly_reports.json

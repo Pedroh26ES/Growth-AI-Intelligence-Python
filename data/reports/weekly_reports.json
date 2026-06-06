@@ -1,0 +1,666 @@
+{
+  "reports": [
+    {
+      "report_id": "growth-2026-05-11-2026-05-17",
+      "week_start": "2026-05-11",
+      "week_end": "2026-05-17",
+      "generated_at": "2026-05-17T12:00:00Z",
+      "executive_summary": "A semana foi estável, com receita concentrada em Pesquisa Paga (Paid Search) e Busca Orgânica (Organic Search). Social Pago (Paid Social) ainda sustentou volume, mas mostrou sinais de fadiga criativa. O foco recomendado é melhorar eficiência antes de aumentar orçamento.",
+      "intro": "Relatório semanal de growth para 11 a 17 de maio de 2026.",
+      "performance": "A receita total foi de R$ 16.500, com 244 conversões. O crescimento foi moderado e dependente de poucos canais, indicando necessidade de diversificar a aquisição.",
+      "risks": [
+        "Queda de 6.1% na receita do canal E-mail (Email).",
+        "ROAS abaixo de 3.0x na campanha 'Lookalike de Clientes de Alto Valor (High-LTV Lookalike)'."
+      ],
+      "rates": [
+        {
+          "name": "Crescimento de Receita (Revenue Growth)",
+          "value": 4.8,
+          "unit": "%",
+          "change_pct": null,
+          "context": "Comparado à semana anterior"
+        },
+        {
+          "name": "Crescimento de Conversões (Conversions Growth)",
+          "value": 3.4,
+          "unit": "%",
+          "change_pct": null,
+          "context": "Comparado à semana anterior"
+        },
+        {
+          "name": "ROAS - Pesquisa de Marca Sempre Ativa (Always-on Brand Search)",
+          "value": 4.33,
+          "unit": "x",
+          "change_pct": null,
+          "context": "Campanha específica"
+        }
+      ],
+      "opportunities": [
+        "Revisar criativos de Social Pago (Paid Social) antes de escalar orçamento.",
+        "Criar novo fluxo de nutrição para recuperar o canal E-mail (Email).",
+        "Expandir pauta de conteúdo orgânico com temas de alta intenção."
+      ],
+      "recommendations": [
+        {
+          "priority": "high",
+          "action": "Atualizar os criativos da campanha 'Lookalike de Clientes de Alto Valor (High-LTV Lookalike)'.",
+          "rationale": "A campanha ainda gera volume, mas ROAS e conversões mostram perda de eficiência.",
+          "owner_suggestion": "Testar novas mensagens, audiências e prova social.",
+          "expected_impact": "Recuperar 5-8% de eficiência em Social Pago (Paid Social)."
+        },
+        {
+          "priority": "medium",
+          "action": "Criar pauta de SEO para termos com intenção comercial.",
+          "rationale": "Busca Orgânica (Organic Search) contribuiu sem mídia paga e pode crescer com baixo custo marginal.",
+          "owner_suggestion": "Priorizar conteúdos de comparação e decisão.",
+          "expected_impact": "Aumentar tráfego qualificado nas próximas 2-4 semanas."
+        },
+        {
+          "priority": "low",
+          "action": "Monitorar queda do canal E-mail (Email).",
+          "rationale": "E-mail (Email) perdeu receita e conversões, mas ainda não representa risco crítico.",
+          "owner_suggestion": "Revisar entregabilidade e segmentação.",
+          "expected_impact": "Evitar piora no próximo ciclo."
+        }
+      ],
+      "channels": [
+        {
+          "channel": "Pesquisa Paga (Paid Search)",
+          "status": "up",
+          "current_value": 5200,
+          "previous_value": 4900,
+          "change_pct": 6.1,
+          "summary": "Crescimento moderado com boa eficiência em termos de marca."
+        },
+        {
+          "channel": "Social Pago (Paid Social)",
+          "status": "stable",
+          "current_value": 5600,
+          "previous_value": 5400,
+          "change_pct": 3.7,
+          "summary": "Volume alto, mas com sinais de saturação em criativos."
+        },
+        {
+          "channel": "Busca Orgânica (Organic Search)",
+          "status": "up",
+          "current_value": 2800,
+          "previous_value": 2400,
+          "change_pct": 16.7,
+          "summary": "Crescimento orgânico sustentado por conteúdo evergreen."
+        },
+        {
+          "channel": "E-mail (Email)",
+          "status": "down",
+          "current_value": 1500,
+          "previous_value": 1600,
+          "change_pct": -6.2,
+          "summary": "Pequena queda por menor engajamento da base."
+        },
+        {
+          "channel": "Indicação (Referral)",
+          "status": "stable",
+          "current_value": 1400,
+          "previous_value": 1450,
+          "change_pct": -3.4,
+          "summary": "Canal estável, sem campanha relevante na semana."
+        }
+      ],
+      "campaigns": [
+        {
+          "name": "Pesquisa de Marca Sempre Ativa (Always-on Brand Search)",
+          "channel": "Pesquisa Paga (Paid Search)",
+          "objective": "Demanda de fundo de funil",
+          "spend": 1200,
+          "conversions": 72,
+          "revenue": 5200,
+          "roas": 4.33,
+          "summary": "Campanha mais eficiente da semana em receita direta."
+        },
+        {
+          "name": "Lookalike de Clientes de Alto Valor (High-LTV Lookalike)",
+          "channel": "Social Pago (Paid Social)",
+          "objective": "Aquisição de novos usuários",
+          "spend": 2100,
+          "conversions": 84,
+          "revenue": 5600,
+          "roas": 2.67,
+          "summary": "Gera volume, mas precisa de novos criativos para proteger eficiência."
+        },
+        {
+          "name": "Páginas SEO de Alta Intenção (High-Intent SEO Pages)",
+          "channel": "Busca Orgânica (Organic Search)",
+          "objective": "Tráfego orgânico qualificado",
+          "spend": 0,
+          "conversions": 38,
+          "revenue": 2800,
+          "roas": null,
+          "summary": "Receita orgânica sem investimento direto em mídia."
+        },
+        {
+          "name": "Recuperação de Clientes Inativos (Winback Email)",
+          "channel": "E-mail (Email)",
+          "objective": "Reativação",
+          "spend": 260,
+          "conversions": 25,
+          "revenue": 1500,
+          "roas": 5.77,
+          "summary": "Resultado abaixo do histórico, exigindo revisão de segmentação."
+        },
+        {
+          "name": "Indicações com Parceiros Ativos (Partner Referral)",
+          "channel": "Indicação (Referral)",
+          "objective": "Parcerias",
+          "spend": 500,
+          "conversions": 25,
+          "revenue": 1400,
+          "roas": 2.8,
+          "summary": "Resultado estável vindo de parceiros existentes."
+        }
+      ],
+      "conclusion": "A semana fechou saudável, mas com dependência relevante de canais pagos. O próximo passo é corrigir eficiência antes de acelerar investimento.",
+      "sources": [
+        "data/raw/sample_growth_week_2026_05_11.csv"
+      ],
+      "confidence_notes": []
+    },
+    {
+      "report_id": "growth-2026-05-18-2026-05-24",
+      "week_start": "2026-05-18",
+      "week_end": "2026-05-24",
+      "generated_at": "2026-05-24T12:00:00Z",
+      "executive_summary": "A semana acelerou em receita e conversões, puxada por Pesquisa Paga (Paid Search) e Busca Orgânica (Organic Search). Social Pago (Paid Social) melhorou após ajustes, mas E-mail (Email) continuou abaixo do potencial. Recomendações priorizam escalar Busca e recuperar E-mail (Email).",
+      "intro": "Relatório semanal de growth para 18 a 24 de maio de 2026.",
+      "performance": "A receita total foi de R$ 17.900, com 262 conversões. Comparado à semana anterior, houve crescimento de 8.5% na receita e 7.4% nas conversões.",
+      "risks": [
+        "Queda de 5.9% na receita do canal E-mail (Email).",
+        "Indicação (Referral) ainda depende de poucos parceiros ativos."
+      ],
+      "rates": [
+        {
+          "name": "Crescimento de Receita (Revenue Growth)",
+          "value": 8.5,
+          "unit": "%",
+          "change_pct": null,
+          "context": "Comparado à semana anterior"
+        },
+        {
+          "name": "Crescimento de Conversões (Conversions Growth)",
+          "value": 7.4,
+          "unit": "%",
+          "change_pct": null,
+          "context": "Comparado à semana anterior"
+        },
+        {
+          "name": "ROAS - Pesquisa de Marca Sempre Ativa (Always-on Brand Search)",
+          "value": 4.5,
+          "unit": "x",
+          "change_pct": null,
+          "context": "Campanha específica"
+        }
+      ],
+      "opportunities": [
+        "Escalar Pesquisa Paga (Paid Search) em grupos com ROAS acima de 4.0x.",
+        "Reativar base de E-mail (Email) com oferta segmentada.",
+        "Criar campanha dedicada para parceiros com maior potencial."
+      ],
+      "recommendations": [
+        {
+          "priority": "high",
+          "action": "Aumentar orçamento de Pesquisa Paga (Paid Search) em 15% nos grupos de maior ROAS.",
+          "rationale": "O canal cresceu com eficiência e tem sinal claro para escala controlada.",
+          "owner_suggestion": "Aplicar aumento apenas em termos e públicos com conversão consistente.",
+          "expected_impact": "Capturar 6-10% de receita adicional mantendo ROAS saudável."
+        },
+        {
+          "priority": "medium",
+          "action": "Reestruturar campanha de Reativação CRM por E-mail (Email).",
+          "rationale": "E-mail (Email) caiu novamente e precisa de nova segmentação para voltar a contribuir.",
+          "owner_suggestion": "Separar leads frios, clientes inativos e trial abandonado.",
+          "expected_impact": "Recuperar engajamento e reduzir risco de queda recorrente."
+        },
+        {
+          "priority": "low",
+          "action": "Mapear parceiros com maior taxa de conversão.",
+          "rationale": "Indicação (Referral) tem potencial, mas ainda é pequeno e concentrado.",
+          "owner_suggestion": "Criar lista de parceiros prioritários.",
+          "expected_impact": "Preparar base para campanha de referral na semana seguinte."
+        }
+      ],
+      "channels": [
+        {
+          "channel": "Pesquisa Paga (Paid Search)",
+          "status": "stable",
+          "current_value": 5400,
+          "previous_value": 5200,
+          "change_pct": 3.8,
+          "summary": "Crescimento consistente com boa eficiência de mídia."
+        },
+        {
+          "channel": "Social Pago (Paid Social)",
+          "status": "up",
+          "current_value": 5900,
+          "previous_value": 5600,
+          "change_pct": 5.4,
+          "summary": "Melhora após ajustes de criativo e segmentação."
+        },
+        {
+          "channel": "Busca Orgânica (Organic Search)",
+          "status": "up",
+          "current_value": 3100,
+          "previous_value": 2800,
+          "change_pct": 10.7,
+          "summary": "Conteúdo orgânico continuou ganhando tração."
+        },
+        {
+          "channel": "E-mail (Email)",
+          "status": "down",
+          "current_value": 1600,
+          "previous_value": 1700,
+          "change_pct": -5.9,
+          "summary": "Canal ainda abaixo do esperado, com queda de engajamento."
+        },
+        {
+          "channel": "Indicação (Referral)",
+          "status": "up",
+          "current_value": 1900,
+          "previous_value": 1400,
+          "change_pct": 35.7,
+          "summary": "Crescimento impulsionado por novas menções de parceiros."
+        }
+      ],
+      "campaigns": [
+        {
+          "name": "Pesquisa de Marca Sempre Ativa (Always-on Brand Search)",
+          "channel": "Pesquisa Paga (Paid Search)",
+          "objective": "Demanda de fundo de funil",
+          "spend": 1200,
+          "conversions": 78,
+          "revenue": 5400,
+          "roas": 4.5,
+          "summary": "Boa eficiência e crescimento consistente em receita."
+        },
+        {
+          "name": "Lookalike de Clientes de Alto Valor (High-LTV Lookalike)",
+          "channel": "Social Pago (Paid Social)",
+          "objective": "Aquisição de novos usuários",
+          "spend": 2000,
+          "conversions": 79,
+          "revenue": 5900,
+          "roas": 2.95,
+          "summary": "Recuperação parcial após ajustes de campanha."
+        },
+        {
+          "name": "Páginas SEO de Alta Intenção (High-Intent SEO Pages)",
+          "channel": "Busca Orgânica (Organic Search)",
+          "objective": "Tráfego orgânico qualificado",
+          "spend": 0,
+          "conversions": 43,
+          "revenue": 3100,
+          "roas": null,
+          "summary": "Crescimento orgânico com boa intenção comercial."
+        },
+        {
+          "name": "Recuperação de Clientes Inativos (Winback Email)",
+          "channel": "E-mail (Email)",
+          "objective": "Reativação",
+          "spend": 260,
+          "conversions": 27,
+          "revenue": 1600,
+          "roas": 6.15,
+          "summary": "Ainda abaixo do potencial, apesar de leve melhora em conversões."
+        },
+        {
+          "name": "Indicações com Parceiros Ativos (Partner Referral)",
+          "channel": "Indicação (Referral)",
+          "objective": "Parcerias",
+          "spend": 520,
+          "conversions": 35,
+          "revenue": 1900,
+          "roas": 3.65,
+          "summary": "Crescimento relevante por novas menções de parceiros."
+        }
+      ],
+      "conclusion": "O crescimento melhorou, mas E-mail (Email) permanece como ponto de atenção. A próxima semana deve focar em escalar Pesquisa Paga (Paid Search) com controle e preparar Indicação (Referral).",
+      "sources": [
+        "data/raw/sample_growth_week_2026_05_18.csv"
+      ],
+      "confidence_notes": []
+    },
+    {
+      "report_id": "growth-2026-05-25-2026-05-31",
+      "week_start": "2026-05-25",
+      "week_end": "2026-05-31",
+      "generated_at": "2026-05-31T12:00:00Z",
+      "executive_summary": "A semana apresentou um desempenho misto, com crescimento notável em receita e conversões em alguns canais, enquanto outros mostraram queda. A campanha 'Proteção de Marca em Busca (Brand Protection Search)' em Pesquisa Paga (Paid Search) se destacou com forte ROAS. Recomendações focam em otimizar campanhas com baixo desempenho e escalar as de sucesso.",
+      "intro": "Este relatório detalha o desempenho de marketing de crescimento para a semana de 25 a 31 de maio de 2026, com base nos dados coletados.",
+      "performance": "A receita total para a semana foi de R$ 20.600, com 297 conversões. Comparado à semana anterior, houve um aumento de 15.4% na receita e 13.5% nas conversões, indicando um crescimento geral positivo.",
+      "risks": [
+        "Queda de 13.6% na receita do canal Social Pago (Paid Social).",
+        "Queda de 10.5% nas conversões do canal Social Pago (Paid Social).",
+        "Baixo ROAS na campanha 'Lookalike de Clientes de Alto Valor (High-LTV Lookalike)' em Social Pago (Paid Social)."
+      ],
+      "rates": [
+        {
+          "name": "Crescimento de Receita (Revenue Growth)",
+          "value": 15.4,
+          "unit": "%",
+          "change_pct": null,
+          "context": "Comparado à semana anterior"
+        },
+        {
+          "name": "Crescimento de Conversões (Conversions Growth)",
+          "value": 13.5,
+          "unit": "%",
+          "change_pct": null,
+          "context": "Comparado à semana anterior"
+        },
+        {
+          "name": "ROAS - Proteção de Marca em Busca (Brand Protection Search)",
+          "value": 5.17,
+          "unit": "x",
+          "change_pct": null,
+          "context": "Campanha específica"
+        }
+      ],
+      "opportunities": [
+        "Escalar o investimento na campanha 'Proteção de Marca em Busca (Brand Protection Search)' devido ao seu alto ROAS.",
+        "Otimizar a segmentação e criativos da campanha 'Lookalike de Clientes de Alto Valor (High-LTV Lookalike)' para melhorar o desempenho.",
+        "Explorar o potencial de crescimento do canal Reativação CRM por E-mail (Email)."
+      ],
+      "recommendations": [
+        {
+          "priority": "high",
+          "action": "Aumentar o orçamento da campanha 'Proteção de Marca em Busca (Brand Protection Search)' em Pesquisa Paga (Paid Search) em 20%.",
+          "rationale": "A campanha demonstrou um ROAS excepcional (5.17x), indicando alta eficiência na geração de receita.",
+          "owner_suggestion": "Alocar orçamento adicional para testar novos públicos e criativos.",
+          "expected_impact": "Aumento esperado de 10-15% na receita gerada por esta campanha."
+        },
+        {
+          "priority": "medium",
+          "action": "Revisar e otimizar a campanha 'Lookalike de Clientes de Alto Valor (High-LTV Lookalike)' em Social Pago (Paid Social).",
+          "rationale": "A campanha apresentou queda de receita e conversões, com ROAS abaixo da média. É necessário investigar a causa.",
+          "owner_suggestion": "Analisar performance de anúncios, segmentação de público e página de destino.",
+          "expected_impact": "Potencial de recuperação do desempenho e melhoria do ROAS em 5-10%."
+        },
+        {
+          "priority": "low",
+          "action": "Investigar o motivo da queda de desempenho no canal Social Pago (Paid Social).",
+          "rationale": "O canal Social Pago (Paid Social) apresentou queda significativa em receita e conversões, necessitando de análise aprofundada.",
+          "owner_suggestion": "Comparar métricas com períodos anteriores e com outros canais.",
+          "expected_impact": "Identificação de gargalos e oportunidades de melhoria para o próximo ciclo."
+        }
+      ],
+      "channels": [
+        {
+          "channel": "Pesquisa Paga (Paid Search)",
+          "status": "up",
+          "current_value": 6200.0,
+          "previous_value": 5400.0,
+          "change_pct": 14.8,
+          "summary": "Crescimento robusto de receita impulsionado pela campanha 'Proteção de Marca em Busca (Brand Protection Search)'."
+        },
+        {
+          "channel": "Social Pago (Paid Social)",
+          "status": "down",
+          "current_value": 5100.0,
+          "previous_value": 5900.0,
+          "change_pct": -13.6,
+          "summary": "Queda na receita e conversões, necessitando de otimização."
+        },
+        {
+          "channel": "Busca Orgânica (Organic Search)",
+          "status": "up",
+          "current_value": 3900.0,
+          "previous_value": 3100.0,
+          "change_pct": 25.8,
+          "summary": "Forte crescimento de receita, indicando bom desempenho de conteúdo."
+        },
+        {
+          "channel": "E-mail (Email)",
+          "status": "up",
+          "current_value": 2100.0,
+          "previous_value": 1600.0,
+          "change_pct": 31.3,
+          "summary": "Crescimento expressivo na receita, com bom engajamento na campanha de reativação."
+        },
+        {
+          "channel": "Indicação (Referral)",
+          "status": "up",
+          "current_value": 3300.0,
+          "previous_value": 1900.0,
+          "change_pct": 73.7,
+          "summary": "Crescimento significativo na receita, impulsionado pela campanha 'Webinar de Co-marketing (Partner Webinar)'."
+        }
+      ],
+      "campaigns": [
+        {
+          "name": "Proteção de Marca em Busca (Brand Protection Search)",
+          "channel": "Pesquisa Paga (Paid Search)",
+          "objective": "Geração de Leads/Vendas",
+          "spend": 1200.0,
+          "conversions": 88.0,
+          "revenue": 6200.0,
+          "roas": 5.17,
+          "summary": "Campanha de alta performance com ROAS excelente e crescimento de receita."
+        },
+        {
+          "name": "Lookalike de Clientes de Alto Valor (High-LTV Lookalike)",
+          "channel": "Social Pago (Paid Social)",
+          "objective": "Aquisição de Novos Clientes",
+          "spend": 1800.0,
+          "conversions": 71.0,
+          "revenue": 5100.0,
+          "roas": 2.83,
+          "summary": "Desempenho em queda, necessitando de otimização para recuperar receita e conversões."
+        },
+        {
+          "name": "Cluster SEO de Comparação SaaS (SaaS Comparison SEO)",
+          "channel": "Busca Orgânica (Organic Search)",
+          "objective": "Reconhecimento de Marca/Tráfego Orgânico",
+          "spend": 0.0,
+          "conversions": 52.0,
+          "revenue": 3900.0,
+          "roas": null,
+          "summary": "Forte contribuição de receita sem investimento direto, indicando sucesso na estratégia de conteúdo."
+        },
+        {
+          "name": "Reativação CRM de Leads Inativos (CRM Reactivation)",
+          "channel": "E-mail (Email)",
+          "objective": "Reativação de Clientes",
+          "spend": 250.0,
+          "conversions": 39.0,
+          "revenue": 2100.0,
+          "roas": 8.4,
+          "summary": "Campanha de email com ROAS muito alto, demonstrando eficácia na reativação."
+        },
+        {
+          "name": "Webinar de Co-marketing (Partner Webinar)",
+          "channel": "Indicação (Referral)",
+          "objective": "Geração de Leads/Parcerias",
+          "spend": 600.0,
+          "conversions": 47.0,
+          "revenue": 3300.0,
+          "roas": 5.5,
+          "summary": "Campanha de referral com forte crescimento de receita e bom ROAS."
+        }
+      ],
+      "conclusion": "A semana demonstrou um crescimento geral positivo, com destaque para os canais E-mail (Email) e Indicação (Referral). A campanha 'Proteção de Marca em Busca (Brand Protection Search)' continua sendo um pilar de alta performance. É crucial focar na otimização das campanhas com desempenho em queda, especialmente em Social Pago (Paid Social), para sustentar o crescimento.",
+      "sources": [
+        "data\\raw\\sample_growth.csv"
+      ],
+      "confidence_notes": []
+    },
+    {
+      "report_id": "growth-2026-06-01-2026-06-07",
+      "week_start": "2026-06-01",
+      "week_end": "2026-06-07",
+      "generated_at": "2026-06-07T12:00:00Z",
+      "executive_summary": "A semana fechou em queda forte, com redução de receita e conversões em todos os principais canais. Social Pago (Paid Social) e Indicação (Referral) foram os pontos mais críticos, enquanto Pesquisa Paga (Paid Search) ainda manteve algum volume, mas perdeu eficiência. A prioridade é conter perda, revisar verba e corrigir campanhas antes de escalar novamente.",
+      "intro": "Relatorio semanal de growth para 1 a 7 de junho de 2026, com queda geral de performance.",
+      "performance": "A receita total caiu para R$ 13.500, com 205 conversões. Comparado à semana anterior, houve queda de 34.5% na receita e 31.0% nas conversões, indicando um ciclo de correção necessário antes de novos aumentos de investimento.",
+      "risks": [
+        "Queda de 34.5% na receita total da semana.",
+        "Queda de 31.0% nas conversões totais.",
+        "Indicação (Referral) perdeu 42.4% de receita após fim da campanha 'Webinar de Co-marketing (Partner Webinar)'.",
+        "Social Pago (Paid Social) segue com queda e ROAS abaixo do desejado."
+      ],
+      "rates": [
+        {
+          "name": "Crescimento de Receita (Revenue Growth)",
+          "value": -34.5,
+          "unit": "%",
+          "change_pct": null,
+          "context": "Comparado à semana anterior"
+        },
+        {
+          "name": "Crescimento de Conversões (Conversions Growth)",
+          "value": -31.0,
+          "unit": "%",
+          "change_pct": null,
+          "context": "Comparado à semana anterior"
+        },
+        {
+          "name": "ROAS - Lookalike de Clientes de Alto Valor (High-LTV Lookalike)",
+          "value": 1.88,
+          "unit": "x",
+          "change_pct": null,
+          "context": "Campanha especifica"
+        }
+      ],
+      "opportunities": [
+        "Pausar aumento de verba em canais com queda ate entender a causa.",
+        "Revisar criativos, segmentação e página de destino de Social Pago (Paid Social).",
+        "Criar plano de recuperação para Indicação (Referral) após queda da campanha de parceiros."
+      ],
+      "recommendations": [
+        {
+          "priority": "high",
+          "action": "Congelar expansão de orçamento em Social Pago (Paid Social) e Indicação (Referral) por uma semana.",
+          "rationale": "Os dois canais puxaram a maior parte da queda e precisam de diagnostico antes de receber mais investimento.",
+          "owner_suggestion": "Redistribuir apenas verba essencial para campanhas com ROAS comprovado.",
+          "expected_impact": "Evitar perda adicional enquanto o time corrige segmentação, oferta e funil."
+        },
+        {
+          "priority": "high",
+          "action": "Auditar a campanha 'Lookalike de Clientes de Alto Valor (High-LTV Lookalike)' antes do próximo ciclo.",
+          "rationale": "A campanha caiu em receita e eficiência, com ROAS baixo para aquisicao paga.",
+          "owner_suggestion": "Revisar criativos, público, frequência e taxa de conversão da página de destino.",
+          "expected_impact": "Recuperar eficiência e reduzir desperdicio de midia."
+        },
+        {
+          "priority": "medium",
+          "action": "Reativar programa de indicações com parceiros para recuperar Indicação (Referral).",
+          "rationale": "A queda em Indicação (Referral) mostra dependência de uma campanha pontual.",
+          "owner_suggestion": "Criar lista de parceiros ativos e uma nova agenda de co-marketing.",
+          "expected_impact": "Reduzir dependência de campanhas isoladas."
+        },
+        {
+          "priority": "low",
+          "action": "Monitorar Busca Orgânica (Organic Search) sem alterar prioridade de conteúdo.",
+          "rationale": "O canal caiu, mas segue com custo baixo e pode recuperar com conteúdos ja publicados.",
+          "owner_suggestion": "Acompanhar páginas com maior perda de cliques.",
+          "expected_impact": "Separar queda sazonal de problema estrutural."
+        }
+      ],
+      "channels": [
+        {
+          "channel": "Pesquisa Paga (Paid Search)",
+          "status": "down",
+          "current_value": 4200,
+          "previous_value": 6200,
+          "change_pct": -32.3,
+          "summary": "Queda relevante após redução de demanda em termos de marca e piora na taxa de conversão."
+        },
+        {
+          "channel": "Social Pago (Paid Social)",
+          "status": "down",
+          "current_value": 3200,
+          "previous_value": 5100,
+          "change_pct": -37.3,
+          "summary": "Continua em queda, com sinais de fadiga criativa e ROAS abaixo do alvo."
+        },
+        {
+          "channel": "Busca Orgânica (Organic Search)",
+          "status": "down",
+          "current_value": 2800,
+          "previous_value": 3900,
+          "change_pct": -28.2,
+          "summary": "Perdeu receita na semana, mas segue como canal de menor custo direto."
+        },
+        {
+          "channel": "E-mail (Email)",
+          "status": "down",
+          "current_value": 1400,
+          "previous_value": 2100,
+          "change_pct": -33.3,
+          "summary": "Queda de engajamento e menor resposta da base de reativacao."
+        },
+        {
+          "channel": "Indicação (Referral)",
+          "status": "down",
+          "current_value": 1900,
+          "previous_value": 3300,
+          "change_pct": -42.4,
+          "summary": "Queda forte após encerramento da campanha 'Webinar de Co-marketing (Partner Webinar)'."
+        }
+      ],
+      "campaigns": [
+        {
+          "name": "Proteção de Marca em Busca (Brand Protection Search)",
+          "channel": "Pesquisa Paga (Paid Search)",
+          "objective": "Geracao de Leads/Vendas",
+          "spend": 1250,
+          "conversions": 61,
+          "revenue": 4200,
+          "roas": 3.36,
+          "summary": "Ainda gera receita, mas perdeu volume e eficiência frente a semana anterior."
+        },
+        {
+          "name": "Lookalike de Clientes de Alto Valor (High-LTV Lookalike)",
+          "channel": "Social Pago (Paid Social)",
+          "objective": "Aquisicao de Novos Clientes",
+          "spend": 1700,
+          "conversions": 45,
+          "revenue": 3200,
+          "roas": 1.88,
+          "summary": "ROAS baixo e queda de conversões indicam necessidade de pausa e revisao."
+        },
+        {
+          "name": "Cluster SEO de Comparação SaaS (SaaS Comparison SEO)",
+          "channel": "Busca Orgânica (Organic Search)",
+          "objective": "SEO transacional/Tráfego Orgânico",
+          "spend": 0,
+          "conversions": 41,
+          "revenue": 2800,
+          "roas": null,
+          "summary": "Queda de receita, mas ainda contribui sem investimento direto em midia."
+        },
+        {
+          "name": "Reativação CRM de Leads Inativos (CRM Reactivation)",
+          "channel": "E-mail (Email)",
+          "objective": "Reativacao de Clientes",
+          "spend": 250,
+          "conversions": 25,
+          "revenue": 1400,
+          "roas": 5.6,
+          "summary": "Perda de engajamento e menor retorno da base reativada."
+        },
+        {
+          "name": "Webinar de Co-marketing (Partner Webinar)",
+          "channel": "Indicação (Referral)",
+          "objective": "Geracao de Leads/Parcerias",
+          "spend": 600,
+          "conversions": 33,
+          "revenue": 1900,
+          "roas": 3.17,
+          "summary": "Fim do pico de campanha reduziu receita e conversões do canal."
+        }
+      ],
+      "conclusion": "A semana exige postura defensiva: entender a queda, proteger caixa de midia e corrigir os canais pagos antes de voltar a escalar. O dashboard deve destacar alertas, quedas por canal e decisoes prioritarias.",
+      "sources": [
+        "data/raw/sample_growth_negative_2026_06_01.csv"
+      ],
+      "confidence_notes": []
+    }
+  ]
+}

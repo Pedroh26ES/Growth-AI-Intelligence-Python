@@ -1,0 +1,42 @@
+[ai]
+provider = "gemini"
+model = "gemini-2.5-flash-lite"
+temperature = 0.2
+
+[storage]
+reports_path = "data/reports/weekly_reports.json"
+raw_dir = "data/raw"
+
+[scheduler]
+timezone = "America/Sao_Paulo"
+day_of_week = "mon"
+hour = 6
+minute = 0
+
+[[sources]]
+name = "Local Growth CSV"
+type = "csv_file"
+path = "data/raw/sample_growth.csv"
+enabled = true
+tags = ["csv", "kpis"]
+
+[[sources]]
+name = "Google Sheets Growth Export"
+type = "google_sheets_url"
+url = "https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit#gid=0"
+enabled = false
+tags = ["google-sheets", "kpis"]
+
+[[sources]]
+name = "Local Growth Excel"
+type = "excel_file"
+path = "data/raw/sample_growth.xlsx"
+enabled = false
+tags = ["excel", "finance"]
+
+[[sources]]
+name = "Weekly Marketing PDF"
+type = "pdf_url"
+url = "https://example.com/report.pdf"
+enabled = false
+tags = ["pdf", "marketing"]
