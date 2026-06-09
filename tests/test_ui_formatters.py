@@ -13,16 +13,16 @@ from growth_report.ui.formatters import (
 
 def test_roas_tone_and_label_signal_investment_return() -> None:
     assert roas_tone(5.2) == "roi-excellent"
-    assert roas_label(5.2) == "acima da média do mercado"
+    assert roas_label(5.2) == "Acima da média do mercado"
 
     assert roas_tone(4.1) == "roi-good"
-    assert roas_label(4.1) == "na média do mercado"
+    assert roas_label(4.1) == "Na média do mercado"
 
     assert roas_tone(3.2) == "roi-watch"
-    assert roas_label(3.2) == "abaixo da média do mercado"
+    assert roas_label(3.2) == "Abaixo da média do mercado"
 
     assert roas_tone(2.4) == "roi-danger"
-    assert roas_label(2.4) == "crítico vs mercado"
+    assert roas_label(2.4) == "Crítico vs. mercado"
 
 
 def test_roas_benchmark_labels_are_market_based() -> None:
@@ -34,7 +34,7 @@ def test_roas_benchmark_labels_are_market_based() -> None:
 def test_roas_benchmark_text_mentions_industry_standard() -> None:
     text = roas_industry_benchmark_text()
 
-    assert "indústria" in text
+    assert "Benchmark geral de mercado" in text
     assert "4.0x" in text
     assert "Acima:" not in text
     assert "Mercado:" not in text

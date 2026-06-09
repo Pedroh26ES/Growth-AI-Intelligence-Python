@@ -80,14 +80,14 @@ def roas_tone(value: float) -> str:
 
 def roas_label(value: float) -> str:
     if value >= EXCELLENT_ROAS:
-        return "acima da média do mercado"
+        return "Acima da média do mercado"
     if value >= MARKET_AVERAGE_ROAS:
-        return "na média do mercado"
+        return "Na média do mercado"
     if value >= BREAK_EVEN_REFERENCE_ROAS:
-        return "abaixo da média do mercado"
+        return "Abaixo da média do mercado"
     if value > 0:
-        return "crítico vs mercado"
-    return "sem ROAS(Return on Ad Spend)"
+        return "Crítico vs. mercado"
+    return "Sem ROAS"
 
 
 def roas_market_average_label() -> str:
@@ -104,8 +104,8 @@ def roas_excellent_label() -> str:
 
 def roas_industry_benchmark_text() -> str:
     return (
-        f"Padrão/média geral da indústria: {roas_market_average_label()} de "
-        "ROAS(Return on Ad Spend). Ajuste por margem, setor, canal e LTV quando tiver esses dados."
+        f"Benchmark geral de mercado: {roas_market_average_label()} de ROAS. "
+        "Ajuste a leitura por margem, setor, canal e LTV quando tiver esses dados."
     )
 
 

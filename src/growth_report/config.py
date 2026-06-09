@@ -11,6 +11,13 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 from growth_report.models import SourceConfig
 
 
+PLACEHOLDER_API_KEYS = {"", "coloque_sua_chave_gemini_aqui", "your-api-key", "sk-..."}
+DEFAULT_PROVIDER_MODELS = {
+    "gemini": "gemini-2.5-flash-lite",
+    "openai": "gpt-4.1-mini",
+}
+
+
 class AIConfig(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
@@ -67,9 +74,12 @@ def load_config(config_path: Path | None = None) -> AppConfig:
         raw_config = tomllib.load(file)
 
     config = AppConfig.model_validate(raw_config)
-    provider_from_env = os.getenv("AI_PROVIDER")
-    if provider_from_env:
-        config.ai.provider = provider_from_env.lower()
+    configured_provider = os.getenv("AI_PROVIDER", config.ai.provider).lower()
+    detected_provider = detect_ai_provider(preferred_provider=configured_provider)
+    if detected_provider:
+        config.ai.provider = detected_provider
+    elif configured_provider in ("gemini", "openai"):
+        config.ai.provider = configured_provider
 
     if config.ai.provider == "gemini":
         model_from_env = os.getenv("GEMINI_MODEL")
@@ -78,7 +88,31 @@ def load_config(config_path: Path | None = None) -> AppConfig:
 
     if model_from_env:
         config.ai.model = model_from_env
+    elif config.ai.provider == "openai" and config.ai.model.startswith("gemini-"):
+        config.ai.model = DEFAULT_PROVIDER_MODELS["openai"]
     return config
+
+
+def is_valid_api_key(value: str | None) -> bool:
+    return bool(value) and value.strip() not in PLACEHOLDER_API_KEYS
+
+
+def detect_ai_provider(preferred_provider: str | None = None) -> str | None:
+    load_dotenv()
+    providers = []
+    if preferred_provider in ("gemini", "openai"):
+        providers.append(preferred_provider)
+    providers.extend(provider for provider in ("gemini", "openai") if provider not in providers)
+
+    for provider in providers:
+        env_name = "GEMINI_API_KEY" if provider == "gemini" else "OPENAI_API_KEY"
+        if is_valid_api_key(os.getenv(env_name)):
+            return provider
+    return None
+
+
+def is_ai_configured() -> bool:
+    return detect_ai_provider() is not None
 
 
 def resolve_project_path(path: Path | str) -> Path:

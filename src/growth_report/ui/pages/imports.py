@@ -4,7 +4,7 @@ from html import escape
 
 import streamlit as st
 
-from growth_report.config import load_config
+from growth_report.config import is_ai_configured, load_config
 from growth_report.models import SourceConfig, SourceType
 from growth_report.pipeline import run_pipeline
 
@@ -78,7 +78,8 @@ def render(ui) -> None:
         sources = ui.load_imported_sources()
         ui.imported_sources_list(sources)
 
-        dry_run = st.checkbox("Modo teste sem IA", value=False)
+        ai_ready = is_ai_configured()
+        dry_run = st.checkbox("Modo teste sem IA", value=not ai_ready)
         _run_status(sources, dry_run)
 
         if st.button("Gerar relatório com fontes importadas", use_container_width=True):
@@ -121,14 +122,28 @@ def _selected_files(uploaded_files) -> None:
 
 
 def _run_status(sources: list[SourceConfig], dry_run: bool) -> None:
-    mode = "teste sem IA" if dry_run else "IA ativa"
-    tone = "neutral" if dry_run else "ready"
+    ai_ready = is_ai_configured()
+    if dry_run:
+        mode = "Modo teste — sem IA"
+        tone = "neutral"
+        status_icon = "🔵"
+        status_detail = "O pipeline roda sem enviar dados para a IA. Nenhuma chave necessária."
+    elif ai_ready:
+        mode = "IA ativa"
+        tone = "ready"
+        status_icon = "🟢"
+        status_detail = "API configurada. O relatório será gerado pela IA e salvo no histórico."
+    else:
+        mode = "IA não configurada"
+        tone = "neutral"
+        status_icon = "🔴"
+        status_detail = "Configure GEMINI_API_KEY ou OPENAI_API_KEY no arquivo .env para ativar a IA, ou use o modo teste."
     st.markdown(
         f"""
         <div class="import-run-status {tone}">
-          <span>{len(sources)} fonte(s)</span>
+          <span>{len(sources)} fonte(s) &nbsp;·&nbsp; {status_icon} {escape(mode)}</span>
           <strong>{escape(mode)}</strong>
-          <small>O relatório será salvo no histórico após o processamento.</small>
+          <small>{escape(status_detail)}</small>
         </div>
         """,
         unsafe_allow_html=True,

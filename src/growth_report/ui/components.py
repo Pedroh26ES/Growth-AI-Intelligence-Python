@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from html import escape
 from pathlib import Path
@@ -54,7 +54,7 @@ def _history_summary(reports: list[WeeklyGrowthReport]) -> None:
     _mini_card(cols[2], "Conversões", _number(total_conversions), "todos os relatórios")
     _mini_card(
         cols[3],
-        "ROAS(Return on Ad Spend) médio",
+        "ROAS médio",
         f"{average_roas:.2f}x" if average_roas else "-",
         "histórico",
     )
@@ -76,7 +76,7 @@ def _history_timeline(reports: list[WeeklyGrowthReport], selected_report: Weekly
         delta = _percent_delta(revenue, previous_revenue) if previous_revenue else None
         delta_label = _change_label(delta) if delta is not None else "base inicial"
         delta_class = _trend_class(delta_label)
-        roas_value = f"{roas:.2f}x ROAS(Return on Ad Spend)" if roas else "sem ROAS(Return on Ad Spend)"
+        roas_value = f"ROAS: {roas:.2f}x" if roas else "Sem ROAS"
         selected = "selected" if report.report_id == selected_report.report_id else ""
         rows.append(
             f'<div class="timeline-row {selected} {tone}">'
@@ -96,7 +96,7 @@ def _history_timeline(reports: list[WeeklyGrowthReport], selected_report: Weekly
     st.markdown(
         '<div class="timeline-help">'
         '<strong>Como ler as cores:</strong> o benchmark geral usado é '
-        f'{escape(_roas_market_average_label())} de ROAS(Return on Ad Spend). '
+        f'{escape(_roas_market_average_label())} de ROAS. '
         'Isso significa que cada R$ 1 investido em mídia gera cerca de R$ 4 em receita. '
         'A regra pode ser ajustada por setor ou canal quando você tiver esse dado.'
         "</div>"
@@ -114,7 +114,7 @@ def _channel_action(change: object) -> str:
         return "Revisar a causa da queda e acompanhar recuperação."
     if change >= 20:
         return "Escalar com controle de orçamento e frequência."
-    return "Manter operação e testar ganho incremental."
+    return "Manter ritmo atual e buscar melhorias contínuas."
 
 
 def _channel_diagnostic_grid(channels: list[dict[str, object]]) -> None:
@@ -257,13 +257,13 @@ def _kpi_row(report: WeeklyGrowthReport) -> None:
     )
     _metric_card(
         cols[2],
-        "ROAS(Return on Ad Spend) médio",
+        "ROAS médio",
         f"{roas:.2f}x" if roas else "-",
         _roas_label(roas) if roas else "sem benchmark",
         "blue",
         "RX",
         (
-            "ROAS(Return on Ad Spend): receita gerada para cada R$ 1 investido em mídia.\n\n"
+            "ROAS: receita gerada para cada R$ 1 investido em mídia.\n\n"
             f"{_roas_industry_benchmark_text()}"
         ),
     )
@@ -372,15 +372,17 @@ def _metric_card(column, label: str, value: str, note: str, tone: str, icon: str
         <div class="metric-card {tone}">
           <div class="metric-head">
             <span>{escape(label)}</span>
-            <span class="info-popover" tabindex="0" aria-label="Explicar {escape(label)}">
-              <span class="info-trigger">!</span>
-              <span class="info-panel">{escape(help_text)}</span>
-            </span>
+            <div style="display: flex; gap: 6px; align-items: center;">
+              <span class="metric-delta {note_tone}">{escape(note)}</span>
+              <span class="info-popover" tabindex="0" aria-label="Explicar {escape(label)}">
+                <span class="info-trigger">!</span>
+                <span class="info-panel">{escape(help_text)}</span>
+              </span>
+            </div>
           </div>
           <div class="metric-body">
             <div>
               <strong>{escape(value)}</strong>
-              <small class="{note_tone}">{escape(note)}</small>
             </div>
             <div class="metric-icon">{escape(icon)}</div>
           </div>
@@ -403,15 +405,12 @@ def _next_steps_panel(report: WeeklyGrowthReport, limit: int | None = None) -> N
         start=1,
     ):
         cards.append(
-            f'<div class="step-card">'
-            f'<span>{index}</span>'
-            f'<div>'
-            f'<strong>{escape(_localize_campaign_text(item.action))}</strong>'
-            f'<p>{escape(_localize_campaign_text(item.expected_impact or item.rationale))}</p>'
-            f'</div>'
+            f'<div class="step-card" style="padding: 0.65rem 0.9rem; min-height: auto; display: flex; align-items: center; gap: 10px;">'
+            f'<span style="background: var(--primary); color: #fff; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0;">{index}</span>'
+            f'<strong style="font-size: 0.85rem; font-weight: 600; color: var(--ink); line-height: 1.35; margin: 0;">{escape(_localize_campaign_text(item.action))}</strong>'
             f'</div>'
         )
-    st.markdown(f'<div class="next-steps-grid">{"".join(cards)}</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="next-steps-grid" style="display: grid; gap: 8px;">{"".join(cards)}</div>', unsafe_allow_html=True)
 
 
 def _campaign_summary(campaigns) -> None:
@@ -424,7 +423,7 @@ def _campaign_summary(campaigns) -> None:
     _mini_card(cols[0], "Receita filtrada", _money(total_revenue), "soma das campanhas")
     _mini_card(
         cols[1],
-        "ROAS(Return on Ad Spend) filtrado",
+        "ROAS filtrado",
         f"{paid_roas:.2f}x" if paid_roas else "-",
         _roas_label(paid_roas) if paid_roas else "sem benchmark",
     )
