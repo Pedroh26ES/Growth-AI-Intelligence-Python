@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="180" viewBox="0 0 640 180" role="img" aria-labelledby="title desc">
+  <title id="title">Growth AI Intelligence</title>
+  <desc id="desc">Logo com gráfico de crescimento e wordmark GrowthAI.</desc>
+  <rect width="640" height="180" rx="28" fill="#F8FAFC"/>
+  <g transform="translate(52 42)">
+    <rect width="96" height="96" rx="24" fill="#0F172A"/>
+    <path d="M24 68h52" fill="none" stroke="#38BDF8" stroke-width="7" stroke-linecap="round" opacity=".75"/>
+    <path d="M28 62l15-16 13 11 21-30" fill="none" stroke="#22C55E" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="28" cy="62" r="6" fill="#38BDF8" stroke="#E0F2FE" stroke-width="2"/>
+    <circle cx="43" cy="46" r="6" fill="#38BDF8" stroke="#E0F2FE" stroke-width="2"/>
+    <circle cx="56" cy="57" r="6" fill="#38BDF8" stroke="#E0F2FE" stroke-width="2"/>
+    <circle cx="77" cy="27" r="8" fill="#22C55E" stroke="#ECFDF5" stroke-width="3"/>
+  </g>
+  <text x="172" y="87" fill="#0F172A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="48" font-weight="800">Growth<tspan fill="#2563EB">AI</tspan></text>
+  <text x="176" y="120" fill="#64748B" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="1.8">INTELIGENCIA DE VENDAS</text>
+  <path d="M177 137h290" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round"/>
+</svg>

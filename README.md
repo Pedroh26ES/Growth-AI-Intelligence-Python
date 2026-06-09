@@ -1,34 +1,86 @@
-# 🚀 Growth AI Intelligence
+# Growth AI Intelligence
 
-**Agente de IA para relatórios semanais de Growth Marketing.**
+![Growth AI Intelligence](docs/images/growth-ai-logo.svg)
 
-Toda segunda-feira às 6h, o projeto coleta dados de growth, normaliza fontes diferentes,
-envia os dados tratados para uma IA e gera um relatório executivo em JSON. Às 8h, o time
-pode abrir o dashboard Streamlit e ver receita, conversões, ROAS, canais em queda,
-campanhas para escalar, riscos e recomendações da semana.
+**Agente de IA em Python para relatórios semanais de Growth Marketing.**
+
+O projeto coleta dados de growth, normaliza fontes diferentes, gera uma leitura executiva com Gemini ou OpenAI e entrega tudo em um dashboard Streamlit com modo claro/escuro, histórico, diagnóstico por canal, ranking de campanhas, ações recomendadas e central de importação.
 
 ![Dashboard - Visão geral](docs/images/dashboard-overview.png)
 
-## ✨ O que esse projeto resolve
+## Destaques
 
-Times de growth normalmente recebem dados em formatos diferentes:
+- Dashboard executivo em Streamlit com novo logo, tema claro/escuro e navegação lateral.
+- Modo teste sem IA ativado automaticamente quando não há chave configurada.
+- Ativação automática de IA quando `GEMINI_API_KEY` ou `OPENAI_API_KEY` existe no `.env`.
+- Normalização de CSV, Excel, Google Sheets, PDF, HTML e texto para um schema comum.
+- Geração de relatório estruturado em JSON com recomendações acionáveis.
+- Comparativos de receita, conversões, ROAS, canais, campanhas, riscos e próximos passos.
+- Testes automatizados para configuração, normalização, métricas e formatadores da UI.
 
-- CSV exportado do Google Ads;
-- planilha Excel do CRM;
-- Google Sheets compartilhado pelo time;
-- PDF com relatório manual;
-- páginas HTML ou textos internos.
+## Telas
 
-O problema é que cada fonte usa nomes de colunas diferentes. Este agente não depende de
-uma tabela fixa. Antes da IA gerar o relatório, ele converte tudo para um **schema interno
-comum**.
+### Visão Geral
 
-## 🧠 Como funciona a normalização
+Resumo executivo da semana com receita, conversões, ROAS médio, riscos, gráfico histórico e distribuição por canal.
 
-O pipeline agora tem uma camada de normalização em `src/growth_report/normalization.py`.
+![Visão geral](docs/images/dashboard-overview.png)
 
-Ela identifica a fonte, mapeia colunas equivalentes e transforma cada linha em um registro
-padronizado:
+### Diagnóstico por Canal
+
+Mostra participação na receita, variação por canal, diagnóstico e decisão recomendada.
+
+![Canais](docs/images/dashboard-channels.png)
+
+### Ranking de Campanhas
+
+Lista campanhas filtráveis por canal e desempenho, com ROAS limpo, benchmark de mercado e contexto de investimento.
+
+![Campanhas](docs/images/dashboard-campaigns.png)
+
+### Importar Fontes
+
+Central para importar arquivos, conectar Google Sheets e rodar o pipeline em modo teste ou com IA.
+
+![Importação](docs/images/dashboard-imports.png)
+
+## Como Funciona
+
+```text
+Fontes externas
+  |-- PDF
+  |-- CSV
+  |-- Excel
+  |-- Google Sheets
+  |-- HTML/Textos
+        |
+        v
+Coletores
+        |
+        v
+Normalização de dados
+        |
+        v
+Schema interno comum
+        |
+        v
+Gemini/OpenAI ou modo teste
+        |
+        v
+Relatório JSON
+        |
+        v
+Storage local
+        |
+        v
+Dashboard Streamlit
+```
+
+## Normalização
+
+A camada `src/growth_report/normalization.py` transforma colunas diferentes em campos comparáveis antes da IA analisar os dados.
+
+Exemplo de registro normalizado:
 
 ```json
 {
@@ -44,9 +96,7 @@ padronizado:
 }
 ```
 
-### Exemplos de mapeamento
-
-| Origem | Colunas possíveis | Campo interno |
+| Origem | Colunas aceitas | Campo interno |
 | --- | --- | --- |
 | Google Ads | `Cost`, `Spend`, `Custo` | `spend` |
 | CRM | `Leads`, `Vendas`, `Conversions` | `conversions` |
@@ -54,96 +104,26 @@ padronizado:
 | Campanhas | `Campaign`, `Nome da campanha`, `Campanha` | `campaign` |
 | Canais | `Channel`, `Canal`, `Origem`, `Plataforma` | `channel` |
 
-### Exemplo prático
-
-CSV do Google Ads:
-
-```csv
-Campaign,Cost,Clicks,Conversions,Revenue
-Brand Protection,"R$ 1.200,00",540,88,"R$ 6.200,00"
-```
-
-Excel do CRM:
-
-```text
-Nome da campanha | Investimento | Leads | Receita
-Reativação CRM   | 250          | 39    | 2100
-```
-
-PDF de relatório:
-
-```text
-Campanha Proteção de Marca teve 120 leads e R$ 4.500 de receita.
-```
-
-Todos viram registros comparáveis antes da IA analisar.
-
-## 📸 Telas do sistema
-
-### Visão geral executiva
-
-Mostra os principais indicadores da semana: receita, conversões, ROAS, riscos, variação
-contra a semana anterior e próximos passos.
-
-![Visão geral](docs/images/dashboard-overview.png)
-
-### Diagnóstico por canal
-
-Mostra quais canais cresceram, quais caíram, peso na receita e ação recomendada.
-
-![Canais](docs/images/dashboard-channels.png)
-
-### Central de importação
-
-Permite importar PDF, CSV, Excel e links de Google Sheets para alimentar o próximo relatório.
-
-![Importação](docs/images/dashboard-imports.png)
-
-## 🏗️ Arquitetura
-
-```text
-Fontes externas
-  ├─ PDF
-  ├─ CSV
-  ├─ Excel
-  ├─ Google Sheets
-  └─ HTML/Textos
-        ↓
-Coletores
-        ↓
-Normalização de dados
-        ↓
-Schema interno comum
-        ↓
-Gemini/OpenAI
-        ↓
-JSON estruturado
-        ↓
-Storage local
-        ↓
-Dashboard Streamlit
-```
-
-## 📁 Estrutura do projeto
+## Estrutura
 
 ```text
 src/growth_report/
   collectors/          # Coleta PDF, CSV, Excel, Sheets, HTML e texto
-  normalization.py     # Mapeia colunas diferentes para um schema comum
+  normalization.py     # Mapeia fontes diferentes para um schema comum
   services/            # Geração com IA e persistência
-  ui/                  # Componentes e páginas do dashboard
-  pipeline.py          # Orquestra coleta → normalização → IA → storage
+  ui/                  # Componentes, páginas e tema do dashboard
+  pipeline.py          # Orquestra coleta -> normalização -> IA -> storage
   cli.py               # Comandos growth-report run/schedule
 
 data/
   raw/                 # Arquivos importados ou exemplos locais
   reports/             # Histórico weekly_reports.json
 
-docs/images/           # Screenshots usados neste README
+docs/images/           # Logo e screenshots do README
 tests/                 # Testes automatizados
 ```
 
-## 🔌 Fontes suportadas
+## Fontes Suportadas
 
 | Tipo | Descrição |
 | --- | --- |
@@ -154,25 +134,31 @@ tests/                 # Testes automatizados
 | `html_url` | Página web |
 | `text_file` | Texto local |
 
-## ⚙️ Setup
+## Setup
 
 ```powershell
-cd C:\Users\Pichau\Documents\Codex\2026-06-05\projeto-weekly-growth-intelligence-report-uma\outputs\weekly-growth-intelligence-report
+git clone https://github.com/Pedroh26ES/Growth-AI-Intelligence-Python.git
+cd Growth-AI-Intelligence-Python
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -e ".[dev]"
 Copy-Item .env.example .env
 ```
 
-Edite o `.env`:
+## Configurar IA
+
+O projeto inicia em modo teste quando nenhuma chave real está configurada. Para ativar IA, edite o `.env` com Gemini ou OpenAI.
+
+Gemini:
 
 ```env
 AI_PROVIDER=gemini
-GEMINI_API_KEY=sua-chave-do-gemini
+GEMINI_API_KEY=sua-chave-gemini
 GEMINI_MODEL=gemini-2.5-flash-lite
+GEMINI_FALLBACK_MODELS=gemini-2.0-flash-lite
 ```
 
-Para usar OpenAI:
+OpenAI:
 
 ```env
 AI_PROVIDER=openai
@@ -180,28 +166,29 @@ OPENAI_API_KEY=sua-chave-openai
 OPENAI_MODEL=gpt-4.1-mini
 ```
 
-## 🧪 Rodar sem gastar API
+Se `AI_PROVIDER` estiver como `gemini`, mas apenas `OPENAI_API_KEY` existir, o app detecta a chave e usa OpenAI automaticamente.
+
+## Rodar Sem Gastar API
 
 ```powershell
 growth-report run --config config.example.toml --dry-run
 ```
 
-O modo `--dry-run` valida coleta, normalização, storage e dashboard sem enviar dados para
-Gemini/OpenAI.
+O modo teste valida coleta, normalização, storage e dashboard sem enviar dados para Gemini/OpenAI.
 
-## 🤖 Rodar com IA
+## Rodar Com IA
 
 ```powershell
 growth-report run --config config.example.toml
 ```
 
-O pipeline salva o relatório em:
+O relatório é salvo em:
 
 ```text
 data/reports/weekly_reports.json
 ```
 
-## 📊 Abrir o dashboard
+## Abrir o Dashboard
 
 ```powershell
 streamlit run src/growth_report/dashboard.py
@@ -213,7 +200,17 @@ Depois abra:
 http://localhost:8501
 ```
 
-## ⏰ Agendamento semanal
+## Importar Fontes Pelo Dashboard
+
+Na aba **Importar Fontes**, é possível:
+
+- enviar PDF, CSV, Excel ou XLS;
+- salvar links públicos de Google Sheets;
+- revisar fontes já importadas;
+- rodar o pipeline em modo teste ou com IA;
+- salvar um novo relatório no histórico local.
+
+## Agendamento Semanal
 
 ```powershell
 growth-report schedule --config config.example.toml
@@ -229,7 +226,7 @@ hour = 6
 minute = 0
 ```
 
-## 🧩 Exemplo de configuração de fontes
+## Exemplo de Fontes
 
 ```toml
 [[sources]]
@@ -261,7 +258,7 @@ enabled = true
 tags = ["pdf", "management"]
 ```
 
-## ✅ Qualidade e testes
+## Qualidade
 
 ```powershell
 .\.venv\Scripts\python.exe -m ruff check src tests
@@ -270,18 +267,19 @@ tags = ["pdf", "management"]
 
 Coberturas importantes:
 
-- extração de CSV/Excel;
-- URL de Google Sheets para export CSV;
+- extração de CSV e Excel;
+- Google Sheets público para CSV;
 - normalização de colunas em inglês e português;
 - extração simples de métricas em texto/PDF;
-- validação do provider Gemini/OpenAI;
-- métricas e formatadores do dashboard.
+- detecção automática de provider Gemini/OpenAI;
+- modo teste sem IA;
+- métricas, benchmarks e formatadores do dashboard.
 
-## 🛠️ Boas práticas aplicadas
+## Boas Práticas
 
-- Pydantic para schemas fortes e JSON confiável.
+- Schemas fortes com Pydantic.
 - Separação por camadas: coletores, normalização, IA, storage e UI.
 - Configuração externa por TOML e `.env`.
-- Modo `dry-run` para testar sem gastar API.
-- Testes automatizados para normalização e fluxo principal.
-- Dashboard dividido por páginas para facilitar manutenção.
+- Modo `dry-run` para testar sem custo de API.
+- Dashboard dividido por páginas.
+- UI com tema claro/escuro e componentes reutilizáveis.
