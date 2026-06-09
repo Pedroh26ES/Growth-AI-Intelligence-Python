@@ -6,8 +6,6 @@
 
 O projeto coleta dados de growth, normaliza fontes diferentes, gera uma leitura executiva com Gemini ou OpenAI e entrega tudo em um dashboard Streamlit com modo claro/escuro, histórico, diagnóstico por canal, ranking de campanhas, ações recomendadas e central de importação.
 
-![Dashboard - Visão geral](docs/images/dashboard-overview.png)
-
 ## Destaques
 
 - Dashboard executivo em Streamlit com novo logo, tema claro/escuro e navegação lateral.
